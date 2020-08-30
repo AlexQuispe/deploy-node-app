@@ -2,7 +2,12 @@
 
 Ejemplo de despliegue de una aplicación Node en Google Cloud Platform.
 
-El despliegue se realiza a través de contenedore docker.
+```bash
+# Start develop
+npm start
+```
+
+El despliegue se realiza a través de contenedores docker.
 
 ## Prerequisitos
 
@@ -24,6 +29,7 @@ gcloud init
 
 ```bash
 ➜  deploy-node-app git:(master) gcloud init
+
     Welcome! This command will take you through the configuration of gcloud.
 
     Pick configuration to use:
@@ -77,7 +83,7 @@ gcloud builds submit --tag gcr.io/BACKEND-PROJECT-ID/example-backend
 ## 4. Crea el contenedor
 
 ```bash
-gcloud run deploy --image gcr.io/example-backend-288000/example-backend --platform managed
+gcloud run deploy --image gcr.io/BACKEND-PROJECT-ID/example-backend --platform managed
 ```
 
 - Se te solicitará el nombre del servicio; presiona Intro para aceptar el nombre predeterminado.
@@ -86,6 +92,7 @@ gcloud run deploy --image gcr.io/example-backend-288000/example-backend --platfo
 
 ```bash
 ➜  deploy-node-app git:(master) ✗ gcloud run deploy --image gcr.io/example-backend-288000/example-backend --platform managed
+
     Service name (example-backend):
     API [run.googleapis.com] not enabled on project [223776350031]. Would
     you like to enable and retry (this will take a few minutes)? (y/N)?  y
